@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+"""
+list_databases.py: A script to list all databases in MongoDB.
+"""
+
+import subprocess
+
+
+def list_databases():
+    """
+    Lists all databases in MongoDB.
+
+    Returns:
+        None
+    """
+    # Connect to MongoDB and list all databases
+    subprocess.run(["mongo", "--eval", "db.adminCommand('listDatabases')"])
+
+
+if __name__ == "__main__":
+    list_databases()
